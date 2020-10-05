@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".IcedTeaRestaurant">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/header_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- esse é o primeiro textview, como se fosse o titulo da aplicação com o nome do restaurante,
+     o texto não é fixo  -->
+
+    <!-- esse é o segundo textview, como se fosse o titulo da aplicação com o nome do restaurante,
+     não há nenhum texto inicialmente -->
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textArea01" />
+
+    <TextView
+        android:id="@+id/textArea01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <!-- botão de registrar o pedido, por enquanto ele vai alterar o valor do textview vazio através
+     da função onClickOrder, chamada no evento onclick.-->
+    <Button
+        android:id="@+id/order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClickOrder"
+        android:text="Confirm order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <!-- botão de consulta de total de horas trabalhadas, por enquanto ele vai alterar o valor do
+     textview vazio através da função onClickGetTotalHours, chamada no evento onclick.-->
+
+    <Button
+        android:id="@+id/getTotalHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClickGetTotalHours"
+        android:text="Get Total Hours"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/order" />
+
+    <Button
+        android:id="@+id/assistantMessenger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClickAssistantMessenger"
+        android:text="@string/assistantMessageButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getTotalHours" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
